@@ -1,0 +1,76 @@
+# Run with `flutter pub run ffigen --config ffigen.yaml`.
+# name: PdfiumLibsBindings
+# description: |
+#   Bindings for `src/pdfium_libs.h`.
+
+#   Regenerate bindings with `flutter pub run ffigen --config ffigen.yaml`.
+# output: 'lib/pdfium_libs_bindings_generated.dart'
+# headers:
+#   entry-points:
+#     - 'src/pdfium_libs.h'
+#   include-directives:
+#     - 'src/pdfium_libs.h'
+# preamble: |
+#   // ignore_for_file: always_specify_types
+#   // ignore_for_file: camel_case_types
+#   // ignore_for_file: non_constant_identifier_names
+# comments:
+#   style: any
+#   length: full
+
+name: 'PdfiumLibsBindings'
+description: 'pdfium_libs_bindings_generated'
+output: 
+  'lib/src/pdfium_libs_bindings_generated.dart'
+llvm-path:     
+  - 'C:/Program Files/llvm' #your llvm path
+headers:
+  entry-points:
+  - 'src\pdfium\win-x86\include\fpdf_annot.h'
+  - 'src\pdfium\win-x86\include\fpdf_attachment.h'
+  - 'src\pdfium\win-x86\include\fpdf_catalog.h'
+  - 'src\pdfium\win-x86\include\fpdf_dataavail.h'
+  - 'src\pdfium\win-x86\include\fpdf_doc.h'
+  - 'src\pdfium\win-x86\include\fpdf_edit.h'
+  - 'src\pdfium\win-x86\include\fpdf_ext.h'
+  - 'src\pdfium\win-x86\include\fpdf_flatten.h'
+  - 'src\pdfium\win-x86\include\fpdf_formfill.h'
+  - 'src\pdfium\win-x86\include\fpdf_fwlevent.h'
+  - 'src\pdfium\win-x86\include\fpdf_javascript.h'
+  - 'src\pdfium\win-x86\include\fpdf_ppo.h'
+  - 'src\pdfium\win-x86\include\fpdf_progressive.h'
+  - 'src\pdfium\win-x86\include\fpdf_save.h'
+  - 'src\pdfium\win-x86\include\fpdf_searchex.h'
+  - 'src\pdfium\win-x86\include\fpdf_signature.h'
+  - 'src\pdfium\win-x86\include\fpdf_structtree.h'
+  - 'src\pdfium\win-x86\include\fpdf_sysfontinfo.h'
+  - 'src\pdfium\win-x86\include\fpdf_text.h'
+  - 'src\pdfium\win-x86\include\fpdf_thumbnail.h'
+  - 'src\pdfium\win-x86\include\fpdf_transformpage.h'
+  - 'src\pdfium\win-x86\include\fpdfview.h'
+  include-directives:
+  - 'src\pdfium\win-x86\include\fpdf_annot.h'
+  - 'src\pdfium\win-x86\include\fpdf_attachment.h'
+  - 'src\pdfium\win-x86\include\fpdf_catalog.h'
+  - 'src\pdfium\win-x86\include\fpdf_dataavail.h'
+  - 'src\pdfium\win-x86\include\fpdf_doc.h'
+  - 'src\pdfium\win-x86\include\fpdf_edit.h'
+  - 'src\pdfium\win-x86\include\fpdf_ext.h'
+  - 'src\pdfium\win-x86\include\fpdf_flatten.h'
+  - 'src\pdfium\win-x86\include\fpdf_formfill.h'
+  - 'src\pdfium\win-x86\include\fpdf_fwlevent.h'
+  - 'src\pdfium\win-x86\include\fpdf_javascript.h'
+  - 'src\pdfium\win-x86\include\fpdf_ppo.h'
+  - 'src\pdfium\win-x86\include\fpdf_progressive.h'
+  - 'src\pdfium\win-x86\include\fpdf_save.h'
+  - 'src\pdfium\win-x86\include\fpdf_searchex.h'
+  - 'src\pdfium\win-x86\include\fpdf_signature.h'
+  - 'src\pdfium\win-x86\include\fpdf_structtree.h'
+  - 'src\pdfium\win-x86\include\fpdf_sysfontinfo.h'
+  - 'src\pdfium\win-x86\include\fpdf_text.h'
+  - 'src\pdfium\win-x86\include\fpdf_thumbnail.h'
+  - 'src\pdfium\win-x86\include\fpdf_transformpage.h'
+  - 'src\pdfium\win-x86\include\fpdfview.h'
+comments:
+  style: any
+  length: full
