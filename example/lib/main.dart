@@ -1,11 +1,13 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:async';
 import 'dart:ui' as ui;
 import "package:pdfium_libs/pdfium_libs.dart" as pdfium_libs;
 
 var pdfium = pdfium_libs.PdfiumWrap();
 void main() {
-  pdfium.loadDocumentFromPath('assets/test.pdf').loadPage(0);
   runApp(const MyApp());
 }
 
@@ -36,15 +38,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool _pageLoad = false;
+  void loadFile() async {
+    try {
+      var data =
+          (await rootBundle.load('assets/test.pdf')).buffer.asUint8List();
+      pdfium.loadDocumentFromBytes(data).loadPage(0);
+      setState(() {
+        _pageLoad = true;
+      });
+    } catch (e) {
+      exit(0);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    loadFile();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Center(
-        child: PdfImage(),
+        child: !_pageLoad ? CircularProgressIndicator() : PdfImage(),
       ),
     );
   }
