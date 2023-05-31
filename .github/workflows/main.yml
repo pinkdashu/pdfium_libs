@@ -185,8 +185,9 @@ jobs:
           cd example/
           cd macos && pod update && pod install && cd ..
           pwd
-          flutter build macos --release
-          cd ..
+          flutter build macos --release --verbose
+          pwd
+          #cd ..
           APP_PATH=build/macos/Build/Products/Release/${{env.APP_NAME}}.app
           cp -a $APP_PATH ./build
           cd build && zip -qroy macos/Runner_${{ steps.get_version.outputs.version }}_macos.zip ${{env.APP_NAME}}.app
