@@ -7,7 +7,7 @@ on:
       - 'master'
       - 'build'
 env:
-  APP_NAME: 'configaction'
+  APP_NAME: 'example'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}
   cancel-in-progress: true
@@ -154,7 +154,10 @@ jobs:
       # 打包 apk
       - name: Collect Apks
         if: matrix.target == 'android'
-        run: flutter build apk # run: flutter build apk --release
+        run:
+          pwd
+          cd example/
+          flutter build apk # run: flutter build apk --release
 #         env:
 #           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
 #           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
@@ -164,6 +167,8 @@ jobs:
       - name: Build ipa
         if: matrix.target == 'ios'
         run: |
+          pwd
+          cd example/
           cd ios && pod update && pod install && cd ..
           flutter build ios --release --no-codesign
           cd ../build
@@ -174,6 +179,8 @@ jobs:
       - name: Build mac app
         if: matrix.target == 'macos'
         run: |
+          pwd
+          cd example/
           cd macos && pod update && pod install && cd ..
           pwd
           flutter build macos --release
@@ -184,6 +191,8 @@ jobs:
       - name: Build windows
         if: matrix.target == 'windows'
         run: |
+          pwd
+          cd example/
           flutter build windows # --release
           $DestDir = "build\windows\${{env.APP_NAME}}"
           $SrcDir = "build\windows\runner\Release"
