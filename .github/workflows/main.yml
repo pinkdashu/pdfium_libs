@@ -142,7 +142,7 @@ jobs:
 
       - name: Flutter pub get
         run: |
-          cd example/
+          cd example
           git config --global core.longpaths true
           flutter pub get
 #          flutter pub run build_runner build --delete-conflicting-outputs
@@ -158,7 +158,7 @@ jobs:
         if: matrix.target == 'android'
         run:
           pwd
-          cd example/
+          cd example
           flutter build apk # run: flutter build apk --release
 #         env:
 #           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -170,7 +170,7 @@ jobs:
         if: matrix.target == 'ios'
         run: |
           pwd
-          cd example/
+          cd example
           cd ios && pod update && pod install && cd ..
           flutter build ios --release --no-codesign
           cd ../build
@@ -182,7 +182,7 @@ jobs:
         if: matrix.target == 'macos'
         run: |
           pwd
-          cd example/
+          cd example
           cd macos && pod update && pod install && cd ..
           pwd
           flutter build macos --release --verbose
@@ -195,7 +195,7 @@ jobs:
         if: matrix.target == 'windows'
         run: |
           pwd
-          cd example/
+          cd example
           flutter build windows # --release
           $DestDir = "build\windows\${{env.APP_NAME}}"
           $SrcDir = "build\windows\runner\Release"
