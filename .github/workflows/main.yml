@@ -30,7 +30,7 @@ jobs:
             flutter_version: '3.11'
             flutter_channel: 'master'
             artifact_name: release-ios
-            artifact_path: example/build/ios/ipa/*.ipa
+            artifact_path: example/build/ios/iphoneos/*.ipa
           - target: macos
             os: macos-12
             flutter_version: '3.11'
@@ -156,10 +156,10 @@ jobs:
       # 打包 apk
       - name: Collect Apks
         if: matrix.target == 'android'
-        run:
+        run: |
           pwd
           cd example
-          flutter build apk # run: flutter build apk --release
+          flutter build apk --release
 #         env:
 #           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
 #           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
