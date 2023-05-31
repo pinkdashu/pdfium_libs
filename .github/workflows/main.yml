@@ -30,7 +30,7 @@ jobs:
             flutter_version: '3.11'
             flutter_channel: 'master'
             artifact_name: release-ios
-            artifact_path: example/build/ios/iphoneos/*.ipa
+            artifact_path: example/build/ios/*.ipa
           - target: macos
             os: macos-12
             flutter_version: '3.11'
@@ -173,9 +173,9 @@ jobs:
           cd example
           cd ios && pod update && pod install && cd ..
           flutter build ios --release --no-codesign
-          cd ../build
+          cd ../build/ios
           mkdir -p Payload
-          mv ios/iphoneos/Runner.app Payload
+          mv iphoneos/Runner.app Payload
           zip -9 ${{env.APP_NAME}}.ipa -r Payload
       # 打包 mac
       - name: Build mac app
