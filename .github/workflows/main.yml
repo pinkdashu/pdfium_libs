@@ -24,25 +24,25 @@ jobs:
             flutter_version: '3.11'
             flutter_channel: 'master'
             artifact_name: release-apk
-            artifact_path: build/app/outputs/apk/release/*.apk
+            artifact_path: example/build/app/outputs/apk/release/*.apk
           - target: ios
             os: macos-12
             flutter_version: '3.11'
             flutter_channel: 'master'
             artifact_name: release-ios
-            artifact_path: build/ios/ipa/*.ipa
+            artifact_path: example/build/ios/ipa/*.ipa
           - target: macos
             os: macos-12
             flutter_version: '3.11'
             flutter_channel: 'master'
             artifact_name: release-mac
-            artifact_path: build/macos/*.zip
+            artifact_path: example/build/macos/*.zip
           - target: windows
             os: windows-latest
             flutter_version: '3.11'
             flutter_channel: 'master'
             artifact_name: release-windows
-            artifact_path: build/windows/*.zip
+            artifact_path: example/build/windows/*.zip
 
     runs-on: ${{ matrix.os }}
     steps:
