@@ -21,7 +21,8 @@ A new Flutter FFI plugin project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
-
+  s.library  = '..\src\pdfium\ios-arm64\lib\libpdfium.dylib'
+  s.library  = 'c++'
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
