@@ -18,10 +18,11 @@ A new Flutter FFI plugin project.
   # paths, so Classes contains a forwarder C file that relatively imports
   # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'pdfium.xcframework'
   s.dependency 'Flutter'
+  s.module_name = 'pdfium'
   s.platform = :ios, '11.0'
-  s.vendored_libraries = 'Frameworks/libpdfium.dylib'
+  s.vendored_frameworks = 'pdfium.xcframework'
   s.library  = 'c++'
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
