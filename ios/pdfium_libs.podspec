@@ -28,11 +28,11 @@ A new Flutter FFI plugin project.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   # telling CocoaPods not to remove framework
- s.preserve_paths = 'pdfium.xcframework/**/*'
+ s.preserve_paths = 'pdfium.xcframework'
  # including OpenCV framework
  s.vendored_frameworks = 'pdfium.xcframework'
  # telling linker to include opencv2 framework
- s.xcconfig = { 'OTHER_LDFLAGS' => '-framework libpdfium'}
+ s.xcconfig = { 'OTHER_LDFLAGS' => '-framework pdfium.xcframework'}
  # including C++ library
  s.library = 'c++'
 end
