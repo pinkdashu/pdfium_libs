@@ -6,8 +6,11 @@ import 'dart:async';
 import 'dart:ui' as ui;
 import "package:pdfium_libs/pdfium_libs.dart" as pdfium_libs;
 
-var pdfium = pdfium_libs.PdfiumWrap();
+late pdfium_libs.PdfiumWrap pdfium;
 void main() {
+  try {
+    pdfium = pdfium_libs.PdfiumWrap();
+  } catch (e) {}
   runApp(const MyApp());
 }
 
@@ -39,6 +42,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool _pageLoad = false;
+  late String title;
   void loadFile() async {
     try {
       var data =
@@ -48,17 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
         _pageLoad = true;
       });
     } catch (e) {
-      exit(0);
+      setState(() {
+        title = e.toString();
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    title = widget.title;
     loadFile();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: Center(
         child: !_pageLoad ? CircularProgressIndicator() : PdfImage(),
