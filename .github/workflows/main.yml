@@ -171,8 +171,9 @@ jobs:
         run: |
           pwd
           cd example
+          cd ios
           flutter precache --ios
-          cd ios && pod update && pod install && cd ..
+          pod update && pod install && cd ..
           flutter build ios --release --no-codesign
           cd ../build/ios
           sh ../../../scripts/thin-payload.sh iphoneos/Runner.app
