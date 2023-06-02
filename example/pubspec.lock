@@ -82,7 +82,7 @@ packages:
     source: hosted
     version: "2.2.0"
   build_runner:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: build_runner
       sha256: "220ae4553e50d7c21a17c051afc7b183d28a24a420502e842f303f8e4e6edced"
@@ -308,7 +308,7 @@ packages:
     source: hosted
     version: "0.18.1"
   intl_utils:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl_utils
       sha256: a509a2ada4d12c4dc70f9ca35c2fddf75f8b402409ac1a9e1b3dd8065681986b
