@@ -32,8 +32,7 @@ A new Flutter FFI plugin project.
  # including OpenCV framework
  s.vendored_frameworks = 'pdfium.xcframework'
  # telling linker to include opencv2 framework
- s.xcconfig = { 'OTHER_LDFLAGS' => '-framework pdfium'}
+ s.xcconfig = { 'OTHER_LDFLAGS' => '-framework libpdfium'}
  # including C++ library
  s.library = 'c++'
- spec.static_framework = true
 end
