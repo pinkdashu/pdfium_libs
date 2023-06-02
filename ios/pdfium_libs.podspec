@@ -26,4 +26,16 @@ A new Flutter FFI plugin project.
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.swift_version = '5.0'
+ 
+   # telling CocoaPods not to remove framework
+   s.preserve_paths = 'pdfium.framework' 
+ 
+   # telling linker to include pdfium framework
+   s.xcconfig = { 'OTHER_LDFLAGS' => '-framework pdfium' }
+ 
+   # including pdfium framework
+   s.vendored_frameworks = 'pdfium.framework' 
+ 
+   # including C++ library
+   s.library = 'c++'
 end
