@@ -30,7 +30,7 @@ A new Flutter FFI plugin project.
   # telling CocoaPods not to remove framework
  s.preserve_paths = 'pdfium.xcframework'
  # telling linker to include opencv2 framework
- s.xcconfig = { 'OTHER_LDFLAGS' => '-framework pdfium' }
+ s.xcconfig = { 'OTHER_LDFLAGS' => '-xcframework pdfium' }
  # including OpenCV framework
  s.vendored_frameworks = 'pdfium.xcframework'
  # including C++ library
