@@ -20,8 +20,6 @@
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>
-	<string>XFWK</string>
-	<key>XCFrameworkFormatVersion</key>
-	<string>1.0</string>
+	<string>FMWK</string>
 </dict>
 </plist>
