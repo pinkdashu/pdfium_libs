@@ -13,6 +13,8 @@ dependencies:
   plugin_platform_interface: ^2.0.2
   ffi: ^2.0.1
   image: ^4.0.17
+  build_runner:
+  intl_utils:
 
 dev_dependencies:
   ffigen: ">=8.0.2"
