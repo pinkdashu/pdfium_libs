@@ -30,7 +30,7 @@ A new Flutter FFI plugin project.
    s.preserve_paths = 'pdfium.xcframework' 
  
    # telling linker to include pdfium framework
-   s.xcconfig = { 'OTHER_LDFLAGS' => '-framework libpdfium' }
+  #  s.xcconfig = { 'OTHER_LDFLAGS' => '-framework libpdfium.a' }
  
    # including pdfium framework
    s.vendored_frameworks = 'pdfium.xcframework' 
