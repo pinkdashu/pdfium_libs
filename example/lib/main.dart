@@ -8,9 +8,6 @@ import "package:pdfium_libs/pdfium_libs.dart" as pdfium_libs;
 
 late pdfium_libs.PdfiumWrap pdfium;
 void main() {
-  try {
-    pdfium = pdfium_libs.PdfiumWrap();
-  } catch (e) {}
   runApp(const MyApp());
 }
 
@@ -45,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late String title;
   void loadFile() async {
     try {
+      pdfium = await pdfium_libs.PdfiumWrap();
       var data =
           (await rootBundle.load('assets/test.pdf')).buffer.asUint8List();
       pdfium.loadDocumentFromBytes(data).loadPage(0);
