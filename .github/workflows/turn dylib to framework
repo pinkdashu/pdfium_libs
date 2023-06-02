@@ -1,0 +1,14 @@
+name: turn dylib to framework
+on:
+  workflow_dispatch:
+  
+jobs:
+  my_job:
+    name: aaa
+    runs-on: macOS-latest
+    
+    steps:
+    - name: run
+      run: |
+        pwd
+        
