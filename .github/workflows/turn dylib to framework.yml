@@ -11,7 +11,9 @@ jobs:
     - name: run
       run: |
         pwd
-        lipo -create ./ios/Frameworks/libpdfium.dylib -output pdfium
+        ls
+        tree
+        lipo -create /Users/runner/work/pdfium_libs/pdfium_libs/ios/Frameworks/libpdfium.dylib -output pdfium
     - name: Publish framework
       uses: actions/upload-artifact@v3
       with:
