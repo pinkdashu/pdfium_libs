@@ -8,11 +8,14 @@ jobs:
     runs-on: macOS-latest
     
     steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
     - name: run
       run: |
         pwd
         ls 
-        cd /Users/runner/work/pdfium_libs/pdfium_libs/ios/Frameworks/
         lipo -create /Users/runner/work/pdfium_libs/pdfium_libs/ios/Frameworks/libpdfium.dylib -output pdfium
     - name: Publish framework
       uses: actions/upload-artifact@v3
