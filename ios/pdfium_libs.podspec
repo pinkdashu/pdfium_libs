@@ -3,7 +3,7 @@
 # Run `pod lib lint plugin_ffi.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'plugin_ffi'
+  s.name             = 'pdfium_libs'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter FFI plugin project.'
   s.description      = <<-DESC
