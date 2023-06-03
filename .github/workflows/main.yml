@@ -2,10 +2,10 @@ name: Build Release
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - 'master'
-  #     - 'build'
+  push:
+    branches:
+      - 'master'
+      - 'build'
 env:
   APP_NAME: 'pdfium_libs_example'
 concurrency:
