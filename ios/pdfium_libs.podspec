@@ -46,11 +46,11 @@
 # Run `pod lib lint dart_ffii_static_link_issue.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'dart_ffii_static_link_issue'
+  s.name             = 'pdfium_libs'
   s.version          = '0.0.1'
-  s.summary          = 'A new flutter plugin project.'
+  s.summary          = 'A new Flutter FFI plugin project.'
   s.description      = <<-DESC
-A new flutter plugin project.
+A new Flutter FFI plugin project.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
