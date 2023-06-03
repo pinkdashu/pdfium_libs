@@ -30,9 +30,6 @@ A new Flutter FFI plugin project.
  
    # including pdfium framework
    s.vendored_frameworks = 'pdfium.framework' 
- 
-   # including C++ library
-   s.library = 'c++'
 end
 
 
