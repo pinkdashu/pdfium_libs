@@ -145,8 +145,8 @@ jobs:
           cd example
           git config --global core.longpaths true
           flutter pub get
-          flutter pub run build_runner build --delete-conflicting-outputs
-          flutter pub run intl_utils:generate
+          # flutter pub run build_runner build --delete-conflicting-outputs
+          # flutter pub run intl_utils:generate
       # Get app version
       - name: Get app version
         id: get_version
@@ -171,13 +171,11 @@ jobs:
         run: |
           pwd
           cd example
-          cd ios
           flutter precache --ios
-          pod update && pod install && cd ..
+          cd ios && pod update && pod install && cd ..
           flutter build ios --release --no-codesign
-          pwd
-          cd build/ios
-          sh ../../../scripts/thin-payload.sh iphoneos/Runner.app
+          cd ../build/ios
+          # sh ../../../scripts/thin-payload.sh iphoneos/Runner.app
           mkdir -p Payload
           mv iphoneos/Runner.app Payload
           zip -9 ${{env.APP_NAME}}.ipa -r Payload
