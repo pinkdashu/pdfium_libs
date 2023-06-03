@@ -21,8 +21,8 @@ A new Flutter FFI plugin project.
   s.preserve_paths = 'pdfium.framework' 
 
   # Flutter.framework does not contain a i386 slice.
-  s.libraries = ["c++", "z"]
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  # s.libraries = ["c++", "z"]
+  # s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.vendored_libraries = 'Frameworks/libpdfium.dylib'
   s.libraries = 'pdfium'
   s.swift_version = '5.0'
