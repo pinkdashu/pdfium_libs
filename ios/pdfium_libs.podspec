@@ -1,11 +1,9 @@
-
-# ref:https://github.com/bitsydarel/dart_ffi_static_link_issue/blob/685c327486856a595a6fab4938686bd8d2e6d7a6/ios/dart_ffii_static_link_issue.podspec#L4
-# ref:https://github.com/paulocoutinhox/pdfium-lib/issues/4
+#
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint dart_ffii_static_link_issue.podspec` to validate before publishing.
+# Run `pod lib lint plugin_ffi.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'pdfium_libs'
+  s.name             = 'plugin_ffi'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter FFI plugin project.'
   s.description      = <<-DESC
@@ -14,13 +12,21 @@ A new Flutter FFI plugin project.
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
+
+  # This will ensure the source files in Classes/ are included in the native
+  # builds of apps using this FFI plugin. Podspec does not support relative
+  # paths, so Classes contains a forwarder C file that relatively imports
+  # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
-  s.source_files     = 'Classes/**/*'
+  # s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.platform         = :ios, '11.0'
-  s.preserve_paths = 'Frameworks' 
+  s.platform = :ios, '11.0'
+  s.vendored_libraries = 'Frameworks/libpdfium.dylib'
+  # Flutter.framework does not contain a i386 slice.
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 end
+
 
 # #
 # # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.

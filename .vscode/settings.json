@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "fpdfview.h": "c",
-        "pdfium_libs.h": "c"
+        "pdfium_libs.h": "c",
+        "pdfium.h": "c"
     }
 }
