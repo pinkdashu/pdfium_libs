@@ -16,7 +16,6 @@ jobs:
       run: |
         pwd
         ls 
-        lipo
         lipo -create /Users/runner/work/pdfium_libs/pdfium_libs/ios/Frameworks/libpdfium.dylib -output pdfium
         lipo -info ./pdfium
     - name: Publish framework
