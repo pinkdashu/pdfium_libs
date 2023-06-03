@@ -11,8 +11,7 @@ project(${PROJECT_NAME} LANGUAGES CXX)
 # Invoke the build for native code shared with the other target platforms.
 # This can be changed to accommodate different builds.
 # add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/../src" "${CMAKE_CURRENT_BINARY_DIR}/shared")
-set(Lib_SRC "pdfium_libs.h")
-add_library("pdfium_libs.h")
+add_executable("pdfium.c")
 set(PDFium_DIR "ios-arm64/PDFiumConfig.cmake")
 find_package(PDFium)
 # List of absolute paths to libraries that should be bundled with the plugin.
