@@ -41,7 +41,7 @@
 
 
 # ref:https://github.com/bitsydarel/dart_ffi_static_link_issue/blob/685c327486856a595a6fab4938686bd8d2e6d7a6/ios/dart_ffii_static_link_issue.podspec#L4
-#
+# ref:https://github.com/paulocoutinhox/pdfium-lib/issues/4
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
 # Run `pod lib lint dart_ffii_static_link_issue.podspec` to validate before publishing.
 #
@@ -64,6 +64,6 @@ A new Flutter FFI plugin project.
   s.libraries = ["c++", "z"]
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.vendored_libraries = 'pdfium.xcframework/ios-arm64/libpdfium.a'
-  s.pod_target_xcconfig = { "OTHER_LDFLAGS" => "-force_load $(PODS_TARGET_SRCROOT)/pdfium.xcframework/ios-arm64/libpdfium.a" }
+  s.pod_target_xcconfig = { "OTHER_LDFLAGS" => "-force_load $(PODS_TARGET_SRCROOT)/pdfium.xcframework/ios-arm64/libpdfium.a -lc++" }
   s.swift_version = '5.0'
 end
