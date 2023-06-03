@@ -18,7 +18,7 @@ A new Flutter FFI plugin project.
   # paths, so Classes contains a forwarder C file that relatively imports
   # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
-  s.vendored_frameworks = 'pdfium.framework/pdfium'
+  s.vendored_frameworks = 'pdfium'
   # # s.source_files = 'Classes/**/*'
   # s.dependency 'Flutter'
   # s.platform = :ios, '11.0'
