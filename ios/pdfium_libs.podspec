@@ -17,7 +17,8 @@ A new Flutter FFI plugin project.
   # builds of apps using this FFI plugin. Podspec does not support relative
   # paths, so Classes contains a forwarder C file that relatively imports
   # `../src/*` so that the C sources can be shared among all target platforms.
-  # s.source           = { :path => '.' }
+  s.source           = { :path => '.' }
+  s.vendored_frameworks = 'pdfium.framework/pdfium'
   # # s.source_files = 'Classes/**/*'
   # s.dependency 'Flutter'
   # s.platform = :ios, '11.0'
