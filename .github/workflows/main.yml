@@ -171,7 +171,7 @@ jobs:
         run: |
           pwd
           cd example
-          flutter precache --ios
+          # flutter precache --ios
           cd ios && pod update && pod install && cd ..
           flutter build ios --release --no-codesign
           cd ../build/ios
