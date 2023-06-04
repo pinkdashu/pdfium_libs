@@ -12,44 +12,20 @@ A new Flutter FFI plugin project.
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
-
-#   # This will ensure the source files in Classes/ are included in the native
-#   # builds of apps using this FFI plugin. Podspec does not support relative
-#   # paths, so Classes contains a forwarder C file that relatively imports
-#   # `../src/*` so that the C sources can be shared among all target platforms.
-#   s.source           = { :path => '.' }
-#   s.source_files = 'Classes/**/*'
-#   s.public_header_files = 'Classes/**/*.h'
-#   s.vendored_frameworks = 'pdfium.xcframework'
-#   # s.frameworks = 'pdfium'
-#   # # s.source_files = 'Classes/**/*'
-#   s.dependency 'Flutter'
-#   s.platform = :ios, '11.0'
-#   # s.vendored_libraries = 'Frameworks/libpdfium.dylib'
-#   # # Flutter.framework does not contain a i386 slice.
-#   # s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
-#   # s.swift_version = '5.0'
-# end
-
-  # This will ensure the source files in Classes/ are included in the native
-  # builds of apps using this FFI plugin. Podspec does not support relative
-  # paths, so Classes contains a forwarder C file that relatively imports
-  # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
+  s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
   s.library  = 'c++'
   # Flutter.framework does not contain a i386 slice.
-  # s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
   s.swift_version = '5.0'
- 
+  s.static_framework = true
   # telling CocoaPods not to remove framework
   s.preserve_paths = 'pdfium.xcframework' 
   # including pdfium framework
-  s.vendored_frameworks = 'pdfium.xcframework' 
-  # telling linker to include pdfium framework
-  s.xcconfig = { 'OTHER_LDFLAGS' => '-framework pdfium' }
+  s.vendored_libraries = 'pdfium.xcframework/ios-arm64/libpdfium.a'
 end
 
 # #
