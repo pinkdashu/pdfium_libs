@@ -19,7 +19,7 @@ A new flutter plugin project.
   s.static_framework = true
   s.vendored_libraries = "**/*.a"
   s.dependency 'Flutter'
-  s.platform = :ios, '8.0'
+  s.platform = :ios, '11.0'
   s.library  = 'c++'
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
