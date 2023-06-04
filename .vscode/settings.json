@@ -2,6 +2,7 @@
     "files.associations": {
         "fpdfview.h": "c",
         "pdfium_libs.h": "c",
-        "pdfium.h": "c"
+        "pdfium.h": "c",
+        "plugin_ffi.h": "c"
     }
 }
