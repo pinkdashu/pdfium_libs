@@ -4,6 +4,14 @@
 
 // Original code copyright 2014 Foxit Software Inc. http://www.foxitsoftware.com
 
+// This is the main header file for embedders of PDFium. It provides APIs to
+// initialize the library, load documents, and render pages, amongst other
+// things.
+//
+// NOTE: None of the PDFium APIs are thread-safe. They expect to be called
+// from a single thread. Barring that, embedders are required to ensure (via
+// a mutex or similar) that only a single PDFium call can be made at a time.
+//
 // NOTE: External docs refer to this file as "fpdfview.h", so do not rename
 // despite lack of consistency with other public files.
 
@@ -191,9 +199,6 @@ typedef int FPDF_ANNOT_APPEARANCEMODE;
 // Dictionary value types.
 typedef int FPDF_OBJECT_TYPE;
 
-#if defined(COMPONENT_BUILD)
-// FPDF_EXPORT should be consistent with |export| in the pdfium_fuzzer
-// template in testing/fuzzers/BUILD.gn.
 #if defined(WIN32)
 #if defined(FPDF_IMPLEMENTATION)
 #define FPDF_EXPORT __declspec(dllexport)
@@ -207,9 +212,6 @@ typedef int FPDF_OBJECT_TYPE;
 #define FPDF_EXPORT
 #endif  // defined(FPDF_IMPLEMENTATION)
 #endif  // defined(WIN32)
-#else
-#define FPDF_EXPORT
-#endif  // defined(COMPONENT_BUILD)
 
 #if defined(WIN32) && defined(FPDFSDK_EXPORTS)
 #define FPDF_CALLCONV __stdcall

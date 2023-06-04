@@ -8,7 +8,7 @@
 #include <memory>
 #include <type_traits>
 
-#include "../cpp/fpdf_deleters.h"
+#include "fpdf_deleters.h"
 
 // Versions of FPDF types that clean up the object at scope exit.
 
