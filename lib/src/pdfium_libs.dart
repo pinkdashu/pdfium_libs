@@ -9,12 +9,12 @@ const String _libName = 'pdfium';
 
 /// The dynamic library in which the symbols for [PdfiumLibsBindings] can be found.
 final DynamicLibrary _dylib = () {
-  if (Platform.isMacOS) {
+  if (Platform.isMacOS || Platform.isIOS) {
     return DynamicLibrary.open('$_libName.framework/$_libName');
   }
-  if (Platform.isIOS) {
-    return DynamicLibrary.process();
-  }
+  // if (Platform.isIOS) {
+  //   return DynamicLibrary.process();
+  // }
   if (Platform.isAndroid || Platform.isLinux) {
     return DynamicLibrary.open('lib$_libName.cr.so');
   }
