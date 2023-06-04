@@ -21,7 +21,7 @@ A new Flutter FFI plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.vendored_frameworks = 'pdfium.xcframework'
-  s.frameworks = 'pdfium'
+  # s.frameworks = 'pdfium'
   # # s.source_files = 'Classes/**/*'
   # s.dependency 'Flutter'
   # s.platform = :ios, '11.0'
