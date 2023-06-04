@@ -23,7 +23,7 @@ A new Flutter FFI plugin project.
   s.vendored_frameworks = 'pdfium.xcframework'
   # s.frameworks = 'pdfium'
   # # s.source_files = 'Classes/**/*'
-  # s.dependency 'Flutter'
+  s.dependency 'Flutter'
   # s.platform = :ios, '11.0'
   # s.vendored_libraries = 'Frameworks/libpdfium.dylib'
   # # Flutter.framework does not contain a i386 slice.
