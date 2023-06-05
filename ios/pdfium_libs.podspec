@@ -17,7 +17,7 @@ A new flutter plugin project.
   s.public_header_files = 'Classes**/*.h'
   s.source_files = 'Classes/**/*'
   s.static_framework = true
-  spec.ios.vendored_frameworks = 'pdfium.xcframework'
+  s.ios.vendored_frameworks = 'pdfium.xcframework'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
