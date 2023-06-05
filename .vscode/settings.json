@@ -3,6 +3,7 @@
         "fpdfview.h": "c",
         "pdfium_libs.h": "c",
         "pdfium.h": "c",
-        "plugin_ffi.h": "c"
+        "plugin_ffi.h": "c",
+        "windows.h": "c"
     }
 }
