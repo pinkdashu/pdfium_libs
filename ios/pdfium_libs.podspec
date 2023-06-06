@@ -17,7 +17,7 @@ A new flutter plugin project.
   s.public_header_files = 'Classes/*.h'
   s.source_files = 'Classes/**/*'
   # s.static_framework = true
-  s.ios.vendored_frameworks = 'pdfium.xcframework'
+  s.ios.vendored_frameworks = 'pdfium.framework'
   s.library = 'c++'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
