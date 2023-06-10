@@ -20,7 +20,7 @@ A new flutter plugin project.
   s.ios.vendored_frameworks = 'pdfium.xcframework'
   s.xcconfig = {
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
-    'CLANG_CXX_LIBRARY' => 'libc++'
+    'CLANG_CXX_LIBRARY' => 'libc++',
     "OTHER_LDFLAGS": '-ObjC -all_load -l"pdfium"'
   }
   s.library = 'c++'
