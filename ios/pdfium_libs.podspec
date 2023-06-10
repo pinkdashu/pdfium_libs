@@ -19,7 +19,7 @@ A new flutter plugin project.
   s.static_framework = true
   s.ios.vendored_frameworks = 'pdfium.xcframework'
   s.xcconfig = {
-    "OTHER_LDFLAGS": "-all_load"
+    "OTHER_LDFLAGS": "-ObjC -all_load -l\"pdfium\""
   }
   # s.library = 'c++'
   s.dependency 'Flutter'
