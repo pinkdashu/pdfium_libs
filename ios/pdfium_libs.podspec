@@ -19,9 +19,11 @@ A new flutter plugin project.
   s.static_framework = true
   s.ios.vendored_frameworks = 'pdfium.xcframework'
   s.xcconfig = {
-    "OTHER_LDFLAGS": "-ObjC -all_load -l\"pdfium\""
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
+    'CLANG_CXX_LIBRARY' => 'libc++'
+    "OTHER_LDFLAGS": '-ObjC -all_load -l"pdfium"'
   }
-  # s.library = 'c++'
+  s.library = 'c++'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
